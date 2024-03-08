@@ -1,22 +1,42 @@
 import java.util.Scanner;
 
-public class PrimeiroAlgoritmo {  
+public class PrimeiroAlgoritmo {
     public static void main(String[] args) {
-
-        // pergutando do usuario a altura atual do objeto e especificando que é em metros
         Scanner leitor = new Scanner(System.in);
-        System.out.println("Qual a altura atual do objeto (em metros)? ");
-        float altura = leitor.nextFloat();
 
-        // definindo a gravidade
-        float gravidade = 9.8f; 
+        double gravidade = 9.81;
+        double tempo = 0;
+        double velocidadeInicial = 0;
+       
+        System.out.print("Insira a altura inicial do objeto (em metros): ");
+        double alturaInicial = leitor.nextDouble();
+        System.out.println("informe o intervalo de tempo que você quer saber o estado do objeto");
+        double intervaloTempo = leitor.nextDouble();
+        double velocidade = 0;
+        // Começar a simulação
+        System.out.println("Tempo (s)\tAltura (m)\tVelocidade (m/s)	");
+        while (alturaInicial > 0) {
+            // Calcular a nova altura do objeto de acordo com a formula em queda livre, que é h=h0 + v0t - 1/2gt^2, como v0 (velocidade iniclal é 0, entao cortamos ele da formula)
+            double altura = alturaInicial - (0.5 * gravidade * Math.pow(tempo, 2));
 
-        //criando a variavel velocidade para trabalhar no for
-        float velocidade;
+         // aqui vai aumentando a velocidade de queda, fazendo com que gravidade vezes o tempo menos a atual velocidade inicial
+            velocidade = (gravidade * tempo) + velocidadeInicial ;
 
-        for (int i = 1; i <= altura; i++) {
-            velocidade = (float) Math.sqrt(2 * gravidade * i);
-            System.out.println("Na posição " + i + ", o objeto terá velocidade " + velocidade + " m/s");
-        }
+         
+            alturaInicial = altura;
+            if ( alturaInicial < 0) {
+            	alturaInicial = 0;
+            	altura = 0;
+            }
+            tempo += intervaloTempo;
+            
+            System.out.printf("%.2f\t\t%.2f\t\t%.2f\n", tempo, altura, velocidade);
+
+
+            }
+        
+    	System.out.println(" o objeto caiu no chão com uma velocidade de: " + velocidade + " em " + tempo + "segundos");
+
+      
     }
 }
