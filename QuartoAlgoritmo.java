@@ -1,4 +1,4 @@
-// Infelizmente a questão 4 eu não consegui, tentei sozinho e  também com ajuda de IA, porém senti muita dificuldade de entender 
+// Infelizmente a questão 4 eu não consegui, ela esta dando erro, tentei sozinho e  também com ajuda de IA, porém senti muita dificuldade de entender 
 
 
 // aqui está meu código:
