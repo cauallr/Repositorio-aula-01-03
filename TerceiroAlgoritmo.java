@@ -1,3 +1,6 @@
+
+// essa tambem senti dificuldade, pedi ajuda a inteligencia artificial porem pesquisei e procurei entender  o conceito de todo o processo atraves de pesquisas
+// e videos aulas no youtube sobre colisao bidimensional
 import java.util.Scanner;
 
 public class TerceiroAlgoritmo {
